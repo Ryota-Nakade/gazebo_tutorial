@@ -1,0 +1,19 @@
+<!-- To execute this file, enter below command
+    $ cd gazebo_tutorial/xacro
+    $ roslaunch gazebo_tutorial xacro_display.launch model:=basic6.xacro
+-->
+
+<launch>
+    <arg name="model"/>
+    <arg name="gui" default="true"/>
+    <arg name="rvizconfig" default="$(find gazebo_tutorial)/rviz/urdf_display.rviz"/>
+    <arg name="length0" default="2.0"/>
+
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model) length:=$(arg length0) --inorder"/>
+    
+    <node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+    <node unless="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+</launch>

@@ -1,0 +1,22 @@
+<!--$ roslaunch gazebo_tutorial urdf_display.launch model:=basic1.xacro を実行すると見れる
+以下のコマンドでURDFに展開できる
+$ cd gazebo_tutorial/xacro
+$ rosrun xacro xacro basic1.xacro ハイフンハイフンinorder >basic1.urdf
+-->
+
+<robot name="test_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:property name="side" value="0.5" />
+
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0" pry="0 0 0"/>
+            <geometry>
+                <box size="${side} ${side} ${side}"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+</robot>

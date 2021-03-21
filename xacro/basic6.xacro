@@ -1,0 +1,34 @@
+<!--
+    xacroファイルの実行時にパラメータを与える練習．
+    xacro:arg でパラメータ名と未指定時の初期設定値を設定する．
+    パラメータを使うときは $(arg length) として使う．
+
+    launchファイルではxacroファイルを指定するところで
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model) length:=1.0 ハイフンハイフンinorder"
+    と指定する．
+-->
+
+<robot name="test_robot" xmlns:xacro="http:ros.org/wiki/xacro">
+    <xacro:arg name="length" default="1.0"/>
+
+    <material name="red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+    </material>
+
+    <link name="base_link"/>
+
+    <joint name="body1_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="$(arg length) 0 0"/>
+        <parent link="base_link"/>
+        <child link="body1_link"/>
+    </joint>
+
+    <link name="body1_link">
+        <visual>
+            <geometry>
+                <box size="0.1 0.1 0.1"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+    </link>
+</robot>
