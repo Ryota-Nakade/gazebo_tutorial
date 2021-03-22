@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  tf
   tf2
   tf2_ros
 )
@@ -107,7 +108,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES gazebo_tutorial
-#  CATKIN_DEPENDS roscpp rospy std_msgs tf2 tf2_ros
+#  CATKIN_DEPENDS roscpp rospy std_msgs tf tf2 tf2_ros
 #  DEPENDS system_lib
 )
 
@@ -136,6 +137,10 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/gazebo_tutorial_node.cpp)
+add_executable(tf2_broadcaster src/tf2_broadcaster.cpp)
+add_executable(tf2_listener src/tf2_listener.cpp)
+add_executable(joint_publisher src/joint_publisher1.cpp)
+add_executable(robot_sim src/robot_sim.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -151,6 +156,22 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+target_link_libraries(tf2_broadcaster
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(tf2_listener
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(joint_publisher
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(robot_sim
+  ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##

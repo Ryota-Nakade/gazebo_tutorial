@@ -1,0 +1,7 @@
+<launch>
+    <arg name="rvizconfig" default="$(find gazebo_tutorial)/rviz/urdf_display.rviz"/>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
+    <node name="tf2_broadcast" pkg="tf2_tutorial" type="tf2_broadcaster"/>
+    <node name="tf2_listen" pkg="tf2_tutorial" type="tf2_listener" output="screen"/>
+</launch>
