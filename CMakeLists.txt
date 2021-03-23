@@ -141,6 +141,7 @@ add_executable(tf2_broadcaster src/tf2_broadcaster.cpp)
 add_executable(tf2_listener src/tf2_listener.cpp)
 add_executable(joint_publisher src/joint_publisher1.cpp)
 add_executable(robot_sim src/robot_sim.cpp)
+add_executable(odom_tf_converter src/odom_tf_converter.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -170,6 +171,10 @@ target_link_libraries(joint_publisher
 )
 
 target_link_libraries(robot_sim
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(odom_tf_converter
   ${catkin_LIBRARIES}
 )
 

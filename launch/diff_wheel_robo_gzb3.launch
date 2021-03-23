@@ -14,7 +14,6 @@
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model dtw_robot" />
 
   <rosparam command="load" file="$(find gazebo_tutorial)/config/diff_drive_controller.yaml" ns="/dtw_robot" />
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/dtw_robot" 
-      args="diff_drive_controller" />
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/dtw_robot" args="diff_drive_controller" />
 
 </launch>
