@@ -1,16 +1,15 @@
-<!-- 直方体の物体を表示する
+<!-- 
 https://qiita.com/srs/items/35bbaadd6c4be1e39bb9
 
-正しくURDFファイルを作成できているか確認するために以下のコマンドを実行
+execute command below to check URDF
     $ check_urdf simple_body1.urdf
 
-以下のように出てくればOK
+indicated like below, it is OK
     robot name is: test_robot
         Successfully Parsed XML
     root Link: base_link has 1 child(ren)
         child(1):  body_link
 -->
-
 
 <robot name="test_robot">
     <link name="base_link"/>
