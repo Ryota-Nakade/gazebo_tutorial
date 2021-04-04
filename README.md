@@ -10,7 +10,6 @@ sudo apt install ros-noetic-ros-control
 sudo apt install ros-noetic-ros-controllers
 sudo apt install ros-noetic-position-controllers
 sudo apt install ros-noetic-joint-state-controller
-
 ```
 
 ## 中身
@@ -32,6 +31,14 @@ sudo apt install ros-noetic-joint-state-controller
 
 
 * /stl : STLファイルの保存場所
+    * omni_barrel.stl  
+     : オムニホイールのバレル部分
+    * omni_housing.stl  
+     : オムニホイールの本体
+    * stl_part.stl  
+     : なんのパーツかは不明．ただ表示させるためだけに使用
+
+
 
 * /urdf
 
@@ -130,11 +137,15 @@ sudo apt install ros-noetic-joint-state-controller
     * diff_gzb_sensor.launch  
      : 各種センサを取り付けたモデルをgazeboとrvizで表示する．
 
-    * diff_robo_sensor.launch
-    LiDARを使う場合
+    * diff_robo_sensor.launch  
+         : LiDARを使う場合
+        ```
         $ roslaunch gazebo_tutorial diff_gzb_sensor.launch
-    カメラを使う場合
+        ```  
+         : カメラを使う場合
+        ```
         $ roslaunch gazebo_tutorial diff_gzb_sensor.launch model:=camera
+        ```
 
     * ds4_turtlesim.launch  
      : PS4コントローラーでturtlesimを動かすのを試してみる．
