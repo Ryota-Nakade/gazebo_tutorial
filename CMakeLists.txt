@@ -142,6 +142,7 @@ add_executable(tf2_listener src/tf2_listener.cpp)
 add_executable(joint_publisher src/joint_publisher1.cpp)
 add_executable(robot_sim src/robot_sim.cpp)
 add_executable(odom_tf_converter src/odom_tf_converter.cpp)
+add_executable(ds4_twist_pub src/ds4_twist_pub.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -177,6 +178,11 @@ target_link_libraries(robot_sim
 target_link_libraries(odom_tf_converter
   ${catkin_LIBRARIES}
 )
+
+target_link_libraries(ds4_twist_pub
+  ${catkin_LIBRARIES}
+)
+
 
 #############
 ## Install ##

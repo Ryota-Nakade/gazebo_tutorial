@@ -27,6 +27,10 @@ sudo apt install ros-noetic-joint-state-controller
     * tf2_listener.cpp
     * odom_tf_converter.cpp
 
+    * ds4_twist_pub.cpp  
+     : PS4のコントローラーからTwist型のメッセージを送信するためのノード
+
+
 * /stl : STLファイルの保存場所
 
 * /urdf
@@ -131,3 +135,6 @@ sudo apt install ros-noetic-joint-state-controller
         $ roslaunch gazebo_tutorial diff_gzb_sensor.launch
     カメラを使う場合
         $ roslaunch gazebo_tutorial diff_gzb_sensor.launch model:=camera
+
+    * ds4_turtlesim.launch  
+     : PS4コントローラーでturtlesimを動かすのを試してみる．
