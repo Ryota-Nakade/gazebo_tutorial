@@ -104,6 +104,14 @@ sudo apt install ros-noetic-joint-state-controller
     * diff_robo_cam_li.xacro  
      : movw_macro.xacroとcamera_macro.xacroとlaser_macro.xacroから1個のモデルを作るマクロ．
 
+    * odom_common.xacro  
+     : xacroで使用する色の設定をする．
+
+    * omni_wheel_set1.xacro  
+     : オムニホイール用のxacro
+
+    * single_omni.xacro  
+     : オムニホイールを生成するxacro
 
 
 * /launch
