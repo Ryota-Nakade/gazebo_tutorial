@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot name="my_robo" xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find gazebo_tutorial)/xacro/odom_common.xacro"/>
+    <xacro:include filename="$(find gazebo_tutorial)/xacro/omni_common.xacro"/>
     <xacro:include filename="$(find gazebo_tutorial)/xacro/omni_wheel_set1.xacro"/>
 
     <link name="base_link"/>

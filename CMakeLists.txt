@@ -143,6 +143,8 @@ add_executable(joint_publisher src/joint_publisher1.cpp)
 add_executable(robot_sim src/robot_sim.cpp)
 add_executable(odom_tf_converter src/odom_tf_converter.cpp)
 add_executable(ds4_twist_pub src/ds4_twist_pub.cpp)
+add_executable(omni_twist src/omni_twist.cpp)
+add_executable(omni_odom src/omni_odom.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -183,6 +185,13 @@ target_link_libraries(ds4_twist_pub
   ${catkin_LIBRARIES}
 )
 
+target_link_libraries(omni_twist
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(omni_odom
+  ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
